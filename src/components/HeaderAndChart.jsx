@@ -18,7 +18,7 @@ const HeaderAndChart = () => {
 
   const fetchMetrics = async () => {
     try {
-      const response = await axios.get("/fetch_metrics");
+      const response = await axios.get("http://13.41.72.245/fetch_metrics");
       setMetrics(response.data);
 
       const dailySummary = response.data.daily_summary || [];

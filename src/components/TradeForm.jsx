@@ -239,7 +239,7 @@ const TradeForm = () => {
 
   const fetchCurrentPrices = async () => {
     try {
-      const response = await axios.get("/current_prices");
+      const response = await axios.get("http://13.41.72.245/current_prices");
       setPrice(response.data.prices?.[0]);
       console.log("response.data :: ", response.data);
     } catch (error) {
@@ -250,7 +250,7 @@ const TradeForm = () => {
   useEffect(() => {
     const fetchAccountDetails = async () => {
       try {
-        const response = await axios.get("/account_details");
+        const response = await axios.get("http://13.41.72.245/account_details");
         setAccountInfo(response.data);
       } catch (error) {
         console.error("Error fetching account details:", error);

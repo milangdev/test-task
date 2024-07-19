@@ -164,7 +164,7 @@ const OpenPositions = () => {
   useEffect(() => {
     const fetchPositions = async () => {
       try {
-        const response = await axios.get("/open_positions");
+        const response = await axios.get("http://13.41.72.245/open_positions");
         setPositions(response.data.open_trades);
       } catch (error) {
         console.error("Error fetching positions:", error);

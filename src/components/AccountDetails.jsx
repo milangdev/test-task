@@ -174,7 +174,7 @@ const AccountDetails = () => {
   useEffect(() => {
     const fetchAccountDetails = async () => {
       try {
-        const response = await axios.get("/account_details");
+        const response = await axios.get("http://13.41.72.245/account_details");
         setAccountInfo(response.data);
       } catch (error) {
         console.error("Error fetching account details:", error);
