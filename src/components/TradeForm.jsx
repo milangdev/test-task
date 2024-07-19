@@ -240,7 +240,7 @@ const TradeForm = () => {
   const fetchCurrentPrices = async () => {
     try {
       const response = await axios.get("/current_prices");
-      setPrice(response.data.prices[0]);
+      setPrice(response.data.prices?.[0]);
       console.log("response.data :: ", response.data);
     } catch (error) {
       console.error("Error fetching current prices:", error);
