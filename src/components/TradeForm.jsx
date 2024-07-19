@@ -395,11 +395,11 @@ const TradeForm = () => {
               <InfoRow label="Name" value={accountInfo?.account_name} />
               <InfoRow
                 label="Balance"
-                value={`$${accountInfo?.balance.toFixed(2)}`}
+                value={`$${accountInfo?.balance?.toFixed(2)}`}
               />
               <InfoRow
                 label="Equity"
-                value={`$${accountInfo?.equity.toFixed(2)}`}
+                value={`$${accountInfo?.equity?.toFixed(2)}`}
               />
               <InfoRow
                 label="Exchange"
