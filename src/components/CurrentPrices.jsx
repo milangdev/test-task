@@ -38,14 +38,14 @@ const currencyPairs = [
 
 const CurrentPrices = () => {
   const [prices, setPrices] = useState(null);
-
+  const REACT_APP_API_BASE_URL = "http://13.41.72.245";
   useEffect(() => {
     fetchCurrentPrices();
   }, []);
 
   const fetchCurrentPrices = async () => {
     try {
-      const response = await axios.get("http://13.41.72.245/current_prices");
+      const response = await axios.get(`${REACT_APP_API_BASE_URL}/current_prices`);
       setPrices(response.data.prices?.[0]);
       console.log("response.data :: ", response.data);
     } catch (error) {

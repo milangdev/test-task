@@ -170,11 +170,11 @@ const ActionRowWithButton = ({ label, length }) => (
 
 const AccountDetails = () => {
   const [accountInfo, setAccountInfo] = useState(null);
-
+  const REACT_APP_API_BASE_URL="http://13.41.72.245"
   useEffect(() => {
     const fetchAccountDetails = async () => {
       try {
-        const response = await axios.get("http://13.41.72.245/account_details");
+        const response = await axios.get(`${REACT_APP_API_BASE_URL}/account_details`);
         setAccountInfo(response.data);
       } catch (error) {
         console.error("Error fetching account details:", error);

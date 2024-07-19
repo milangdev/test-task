@@ -6,6 +6,7 @@ import Chart from "./Chart";
 const HeaderAndChart = () => {
   const [metrics, setMetrics] = useState(null);
   const [balanceData, setBalanceData] = useState(null);
+  const REACT_APP_API_BASE_URL = "http://13.41.72.245";
 
   useEffect(() => {
     fetchMetrics();
@@ -18,7 +19,7 @@ const HeaderAndChart = () => {
 
   const fetchMetrics = async () => {
     try {
-      const response = await axios.get("http://13.41.72.245/fetch_metrics");
+      const response = await axios.get(`${REACT_APP_API_BASE_URL}/fetch_metrics`);
       setMetrics(response.data);
 
       const dailySummary = response.data.daily_summary || [];

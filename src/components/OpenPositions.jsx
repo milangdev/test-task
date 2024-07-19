@@ -160,11 +160,12 @@ const TradesTable = ({ positions }) => {
 
 const OpenPositions = () => {
   const [positions, setPositions] = useState([]);
+  const REACT_APP_API_BASE_URL = "http://13.41.72.245";
 
   useEffect(() => {
     const fetchPositions = async () => {
       try {
-        const response = await axios.get("http://13.41.72.245/open_positions");
+        const response = await axios.get(`${REACT_APP_API_BASE_URL}/open_positions`);
         setPositions(response.data.open_trades);
       } catch (error) {
         console.error("Error fetching positions:", error);
