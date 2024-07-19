@@ -138,7 +138,7 @@ const TradesTable = ({ positions }) => {
         </tr>
       </thead>
       <tbody className="divide-y text-xs divide-borderMain">
-        {positions.map((trade) => (
+        {positions?.map((trade) => (
           <TradeRow
             key={trade.order_id}
             date={trade.open_time}
@@ -188,7 +188,7 @@ const OpenPositions = () => {
           <button className="text-white border-b-2 border-primary pb-3">
             Open Positions{" "}
             <span className="bg-[#252223] rounded-[4px] px-1.5 py-0.5">
-              {positions.length}
+              {positions?.length}
             </span>
           </button>
           <button className={`text-secondary pb-3`}>
